@@ -7,6 +7,7 @@ $data= mysqli_query($conn,"SELECT * from user where username='$user' and passwor
 if(mysqli_num_rows($data)>0){
     $row=mysqli_fetch_array($data);
 		$_SESSION['username'] = $user;
+		$_SESSION['username'] = $row['username'];
 
         header("location:admin.php");
 } else {
